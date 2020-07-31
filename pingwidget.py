@@ -48,6 +48,17 @@ def valueinputer():
 	ip3 = str(values['ip3'])
 	ip4 = str(values['ip4'])
 
+def uidataremover():
+	global mypings1,mypings2,mypings3,mypings4
+	mypings1 = []
+	mypings2 = []
+	mypings3 = []
+	mypings4 = []
+	window.Element('list1').Update(values=mypings1)
+	window.Element('list2').Update(values=mypings2)
+	window.Element('list3').Update(values=mypings3)
+	window.Element('list4').Update(values=mypings4)
+
 def autopinger1():
 	global mypings1
 	while status:
@@ -120,6 +131,7 @@ while True:
     if event == 'Stop':
     	status = False
     	enabler()
+    	uidataremover()
     if event == 'Website':
     	webbrowser.open_new('https://ashkanrafiee.ir/PingWidget')
 
